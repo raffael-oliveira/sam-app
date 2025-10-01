@@ -33,10 +33,12 @@ def lambda_handler(event, context):
 
     #     raise e
 
+    if True:
+        raise Exception("This will cause a deployment rollback")
+
     return {
         "statusCode": 200,
         "body": json.dumps({
             "message": "I'm using canary deployments",
-            # "location": ip.text.replace("\n", "")
         }),
     }
